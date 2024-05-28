@@ -1,5 +1,7 @@
 package com.example.beans;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;
 import org.springframework.context.ApplicationContext;
@@ -62,6 +64,16 @@ public class ExampleBeanThree implements BeanNameAware, BeanFactoryAware, Applic
     //test method
     public void test() {
         System.out.println("ExampleBeanThree :: test method called");
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        System.out.println("ExampleBeanThree :: @PostConstruct postConstruct");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        System.out.println("ExampleBeanThree :: @PreDestroy preDestroy");
     }
 }
 
