@@ -3,6 +3,8 @@ package com.example;
 import com.example.beans.ExampleBeanOne;
 import com.example.beans.ExampleBeanThree;
 import com.example.beans.ExampleBeanTwo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -10,6 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class Application implements ApplicationRunner {
+
+    private final Logger logger = LoggerFactory.getLogger(Application.class);
 
     private final ExampleBeanOne exampleBeanOne;
     private final ExampleBeanTwo exampleBeanTwo;
@@ -27,9 +31,9 @@ public class Application implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        System.out.println("ExampleBeanOne" + exampleBeanOne);
-        System.out.println("ExampleBeanTwo" + exampleBeanTwo);
-        System.out.println("ExampleBeanThree" + exampleBeanThree);
+        logger.info("ExampleBeanOne {}", exampleBeanOne);
+        logger.info("ExampleBeanTwo {}", exampleBeanTwo);
+        logger.info("ExampleBeanThree {}", exampleBeanThree);
         exampleBeanOne.test();
         exampleBeanTwo.test();
         exampleBeanThree.test();
