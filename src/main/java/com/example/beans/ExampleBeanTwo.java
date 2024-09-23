@@ -1,5 +1,7 @@
 package com.example.beans;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
@@ -69,6 +71,16 @@ public class ExampleBeanTwo implements BeanNameAware, BeanFactoryAware, Applicat
     //test method
     public void test() {
         logger.info("ExampleBeanTwo :: test method called");
+    }
+
+    @PostConstruct
+    public void postConstruct() {
+        logger.info("ExampleBeanTwo :: @PostConstruct postConstruct");
+    }
+
+    @PreDestroy
+    public void preDestroy() {
+        logger.info("ExampleBeanTwo :: @PreDestroy preDestroy");
     }
 }
 
