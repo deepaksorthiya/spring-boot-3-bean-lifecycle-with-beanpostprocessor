@@ -1,17 +1,21 @@
+[![Java Maven Build Test](https://github.com/deepaksorthiya/spring-boot-3-bean-lifecycle-with-beanpostprocessor/actions/workflows/maven-build.yml/badge.svg)](https://github.com/deepaksorthiya/spring-boot-3-bean-lifecycle-with-beanpostprocessor/actions/workflows/maven-build.yml)
+
 # Getting Started
 
 ## Requirements:
 
 ```
-Spring Boot : 3.3.4
+Spring Boot : 3.4.1
 Java : 17
 Maven 3.9 +
 ```
+
 ### Clone this repository:
 
 ```bash
 git clone https://github.com/deepaksorthiya/spring-boot-3-bean-lifecycle-with-beanpostprocessor.git
 ```
+
 ```bash
 cd spring-boot-3-bean-lifecycle-with-beanpostprocessor
 ```
@@ -21,7 +25,9 @@ cd spring-boot-3-bean-lifecycle-with-beanpostprocessor
 ```bash
 ./mvnw spring-boot:run
 ```
+
 ## Bean LifeCycle Order
+
 * <p>Bean factory implementations should support the standard bean lifecycle interfaces
 * as far as possible. The full set of initialization methods and their standard order is:
 * <ol>
@@ -47,6 +53,7 @@ cd spring-boot-3-bean-lifecycle-with-beanpostprocessor
 * </ol>
 
 ## OUTPUT
+
 ```
  com.example.beans.ExampleBeanOne         : ExampleBeanThree :: Bean is being instantiated by calling constructor
  com.example.beans.ExampleBeanOne         : ExampleBeanThree :: BeanNameAware: Bean name is set to exampleBeanThree
@@ -94,7 +101,9 @@ cd spring-boot-3-bean-lifecycle-with-beanpostprocessor
  com.example.beans.ExampleBeanOne         : ExampleBeanThree :: DisposableBean: destroy() method called
  com.example.beans.ExampleBeanOne         : ExampleBeanThree :: Custom destroy method called
 ```
+
 ### Reference Documentation
+
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
