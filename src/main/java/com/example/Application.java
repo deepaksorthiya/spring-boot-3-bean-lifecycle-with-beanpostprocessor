@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.beans.ApplicationContextUtils;
 import com.example.beans.ExampleBeanOne;
 import com.example.beans.ExampleBeanThree;
 import com.example.beans.ExampleBeanTwo;
@@ -9,6 +10,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class Application implements ApplicationRunner {
@@ -37,5 +39,8 @@ public class Application implements ApplicationRunner {
         exampleBeanOne.test();
         exampleBeanTwo.test();
         exampleBeanThree.test();
+
+        ApplicationContext context = ApplicationContextUtils.getApplicationContext();
+        logger.info("ApplicationContext {}", context);
     }
 }
